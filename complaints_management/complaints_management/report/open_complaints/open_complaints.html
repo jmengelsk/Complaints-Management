@@ -1,0 +1,34 @@
+<h2 style="font-color: #ff00ff;" class="text-center">{%= __("Complaint Details") %}</h2>
+
+<table style="font-size: 3mm;" class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 7%">{%= __("Date") %}</th>
+            <th style="width: 12%">{%= __("Customer") %}</th>
+            <th style="width: 18%">{%= __("Issue") %}</th>
+            <th style="width: 18%">{%= __("Product") %}</th>
+            <th style="width: 8%">{%= __("Root Cause") %}</th>
+            <th style="width: 32%">{%= __("Actions") %}</th>
+            <th style="width: 5%">{%= __("Status") %}</th>
+<!--            <th style="width: 5%">{%= __("C/N Amout") %}</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for(var i=0, l=data.length; i<l; i++) { %}
+            <tr>
+<!--                <td style="text-align: center;">{%= i+1 %}</td>
+                <td>{%= dateutil.str_to_user(data[i][__("Date")]) || __("Total") %}</td>
+-->
+                <td>{%= data[i][__("cpldate")] %}</td>
+                <td>{%= data[i][__("customer")] %}</td>
+                <td>{%= data[i][__("complaint")] %}</td>
+                <td>{%= data[i][__("product")] %}</td>
+                <td>{%= data[i][__("rootcause")] %}</td>
+                <td>{%= data[i][__("actions")] %}</td>
+                <td>{%= data[i][__("complaint_status")] %}</td>
+<!--                <td style="text-align: right;">{%= data[i][__("Rate")] %}</td> -->
+            </tr>
+        {% } %}
+    </tbody>
+
+</table>

@@ -1,0 +1,44 @@
+// Copyright (c) 2022, Josef Engelskirchen and contributors
+// For license information, please see license.txt
+/* eslint-disable */
+
+frappe.query_reports["Reports"] = {
+	"filters": [
+	   {
+	      "fieldname":"date_from_filter",
+	      "label":"From Date",
+	      "fieldtype":"Date",
+	      "default":frappe.datetime.add_months(frappe.datetime.get_today(), -24)
+	   },
+	   {
+	      "fieldname":"date_to_filter",
+	      "label":"To Date",
+	      "fieldtype": "Date",
+	      "default":frappe.datetime.get_today()
+	   },
+           {
+              "fieldname":"status_filter",
+              "label":("Status"),
+              "fieldtype":"Select",
+//              "options":["","Open","Closed"],
+   	      "options": "Open\nClosed\nOnHold",
+              "default": "Open"
+          },
+           {
+              "fieldname":"customer_filter",
+              "label":("Customer"),
+              "fieldtype":"Link",
+              "options": "Customer",
+              "width": 350
+          },
+           {
+              "fieldname":"approval_filter",
+              "label":("Approved by"),
+//              "fieldtype":"Data"
+              "fieldtype":"Select",
+              "options": "\n\Ahmed Fouad\nKlaus",
+//              "options":["","Ahmed Fouad","Klaus"],
+//              "default": ""
+          }
+	]
+};

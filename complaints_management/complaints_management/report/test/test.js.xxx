@@ -1,0 +1,20 @@
+frappe.query_reports["Test"] = { 
+"filters": [
+  {
+   "fieldname": "Status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "mandatory": 0,
+   "options": "\nOpen\nClosed\nOn Hold",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "mandatory": 0,
+   "options": "Customer",
+   "wildcard_filter": 0
+  }
+ ],
+}

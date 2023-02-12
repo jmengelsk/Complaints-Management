@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include complaints_management *.css
+recursive-include complaints_management *.csv
+recursive-include complaints_management *.html
+recursive-include complaints_management *.ico
+recursive-include complaints_management *.js
+recursive-include complaints_management *.json
+recursive-include complaints_management *.md
+recursive-include complaints_management *.png
+recursive-include complaints_management *.py
+recursive-include complaints_management *.svg
+recursive-include complaints_management *.txt
+recursive-exclude complaints_management *.pyc

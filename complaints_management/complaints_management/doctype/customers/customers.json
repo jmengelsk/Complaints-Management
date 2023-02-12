@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{company} / {customer_nr}",
+ "creation": "2022-03-23 09:03:40.000324",
+ "default_view": "Report",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_data_section",
+  "customer_nr",
+  "company",
+  "company_clearname",
+  "customers_cb1",
+  "customer_country",
+  "customer_currency",
+  "customer_is_gc"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_data_section",
+   "fieldtype": "Section Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "customer_nr",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Nr.",
+   "permlevel": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "bold": 1,
+   "columns": 2,
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "permlevel": 1,
+   "search_index": 1,
+   "width": "400"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "bold": 1,
+   "fieldname": "company_clearname",
+   "fieldtype": "Data",
+   "label": "Company Name 2",
+   "permlevel": 2,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "customer_is_gc",
+   "fieldtype": "Check",
+   "label": "Customer is GC Member"
+  },
+  {
+   "fieldname": "customer_country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "customer_currency",
+   "fieldtype": "Link",
+   "label": "Billing Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "customers_cb1",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "force_re_route_to_default_view": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-01 10:43:53.886379",
+ "modified_by": "Administrator",
+ "module": "Complaints Management",
+ "name": "Customers",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "company, customer_nr",
+ "sort_field": "company",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "company",
+ "track_changes": 1
+}

@@ -1,0 +1,93 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "approval_by",
+   "fieldtype": "Select",
+   "label": "Approved by",
+   "width": 110
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "width": 100
+  },
+  {
+   "fieldname": "name",
+   "fieldtype": "Data",
+   "label": "Complaint Nr",
+   "width": 0
+  },
+  {
+   "fieldname": "complaint_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "width": 0
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "width": 0
+  },
+  {
+   "fieldname": "item_kind_nr",
+   "fieldtype": "Int",
+   "label": "diff. Items",
+   "width": 80
+  },
+  {
+   "fieldname": "cn_amount",
+   "fieldtype": "Currency",
+   "label": "C/N Amount",
+   "width": 110
+  },
+  {
+   "fieldname": "item1_name_en",
+   "fieldtype": "Data",
+   "label": "Product",
+   "width": 260
+  }
+ ],
+ "creation": "2022-06-01 08:53:47.088265",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "depp",
+   "fieldtype": "Select",
+   "label": "Approved by",
+   "mandatory": 0,
+   "options": "\nKlaus\nAhmed Fouad",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2022-06-01 11:36:43.645709",
+ "modified_by": "Administrator",
+ "module": "Complaints Management",
+ "name": "Test",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select\r\n\tapproval_by,\r\n\tdate,\r\n\tname,\r\n\tcomplaint_status,\r\n\tcustomer,\r\n    item_kind_nr,\r\n    cn_amout,\r\n\titem1_name_en\r\n\r\nfrom \r\n    `tabComplaint`",
+ "ref_doctype": "Complaint",
+ "report_name": "Test",
+ "report_script": "",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Complaints User"
+  },
+  {
+   "role": "Complaints Manager"
+  },
+  {
+   "role": "System Manager"
+  }
+ ]
+}

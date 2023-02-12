@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:product_name_en",
+ "creation": "2022-03-23 09:32:49.176524",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "product_data_section",
+  "short_code",
+  "product_code_lecico",
+  "product_name_en",
+  "product_name_de",
+  "product_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "product_data_section",
+   "fieldtype": "Section Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "product_code_lecico",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Code",
+   "permlevel": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "product_name_en",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Product Name",
+   "permlevel": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "product_name_de",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Produktbezeichnung",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "product_image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "short_code",
+   "fieldtype": "Data",
+   "label": "Short Code",
+   "permlevel": 1,
+   "reqd": 1,
+   "unique": 1,
+   "width": "10"
+  }
+ ],
+ "image_field": "product_image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-10-05 11:11:01.375171",
+ "modified_by": "Administrator",
+ "module": "Complaints Management",
+ "name": "GC Product",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "product_name_en, product_name_de, short_code",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "product_name_en",
+ "track_changes": 1
+}

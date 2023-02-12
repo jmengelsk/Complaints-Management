@@ -1,0 +1,124 @@
+
+{% if filters.language_filter == "English" %}
+	<h2 class="text-center"><b>{%= __("Complaint Details") %}</b></h2>
+	<hr>
+      	<h5 class="text-left">
+                <b>{%= __("Active Filters:")%}</b>
+	</h5>
+	<h6>
+                {% if (filters.status_filter) { %}
+                <b>{%= __("Status:")%}</b>
+                {%= filters.status_filter %}
+                {% } %}
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <b>{%= __("Time Range:")%}</b>
+                {%= dateutil.str_to_user(filters.date_from_filter) %}
+                {%= __("to") %}
+                {%= dateutil.str_to_user(filters.date_to_filter) %}
+		&nbsp;&nbsp;&nbsp;&nbsp;
+        	{% if (filters.customer_filter) { %}
+                <b>{%= __("Customer:")%}</b>
+                {%= filters.customer_filter %}
+		{% } %}
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                {% if (filters.product_filter) { %}
+                <b>{%= __("Product:")%}</b>
+                {%= filters.product_filter %}
+                {% } %}
+		&nbsp;&nbsp;&nbsp;&nbsp;
+                {% if (filters.rootcause_filter) { %}
+                <b>{%= __("Root Cause:")%}</b>
+                {%= filters.rootcause_filter %}
+                {% } %}
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                {% if (filters.approval_filter) { %}
+                <b>{%= __("Approved by:")%}</b>
+                {%= filters.approval_filter %}
+                {% } %}
+                &nbsp;&nbsp;&nbsp;&nbsp;
+        </h6>
+	<hr>
+{% endif %}
+
+
+
+{% if filters.language_filter == "German" %}
+	<h2 class="text-center"><b>{%= __("Reklamationsdetails") %}</b></h2>
+{% endif %}
+
+
+
+
+<table style="font-size: 3mm;" class="table table-bordered">
+
+{% if filters.language_filter == "English" %}
+    <thead>
+        <tr>
+            <th style="width: 7%"><b>{%= __("Date") %}</b></th>
+            {% if (filters.customer_filter) %}
+            {% else %}
+            <th style="width: 12%"><b>{%= __("Customer") %}</b></th>
+            {% endif %}
+            <th style="width: 18%"><b>{%= __("Issue") %}</b></th>
+            <th style="width: 18%"><b>{%= __("Product") %}</b></th>
+            {% if (filters.rootcause_filter) %}
+            {% else %}
+            <th style="width: 8%"><b>{%= __("Root Cause") %}</b></th>
+            {% endif %}
+            <th style="width: 32%"<b>>{%= __("Actions") %}</b></th>
+            {% if (filters.status_filter) %}
+            {% else %}
+            <th style="width: 5%"><b>{%= __("Status") %}</b></th>
+            {% endif %}
+        </tr>
+    </thead>
+{% endif %}
+{% if filters.language_filter == "German" %}
+    <thead>
+        <tr>
+            <th style="width: 7%"><b>{%= __("Datum") %}</b></th>
+            <th style="width: 12%"><b>{%= __("Kunde") %}</b></th>
+            <th style="width: 18%"><b>{%= __("Reklamation") %}</b></th>
+            <th style="width: 18%"><b>{%= __("Produkt") %}</b></th>
+            <th style="width: 8%"><b>{%= __("Ursache") %}</b></th>
+            <th style="width: 32%"><b>{%= __("Massnahmen") %}</b></th>
+            <th style="width: 5%"><b>{%= __("Status") %}</b></th>
+        </tr>
+    </thead>
+{% endif %}
+    <tbody>
+        {% for(var i=0, l=data.length; i<l; i++) { %}
+            <tr>
+<!--                <td style="text-align: center;">{%= i+1 %}</td>
+                <td>{%= dateutil.str_to_user(data[i][__("Date")]) || __("Total") %}</td>
+-->
+                <td>{%= dateutil.str_to_user(data[i][__("cpldate")]) %}</td>
+                {% if (filters.customer_filter) %}
+                {% else %}
+                <td>{%= data[i][__("customer")] %}</td>
+                {% endif %}
+                <td>{%= data[i][__("complaint")] %}</td>
+                <td>{%= data[i][__("product")] %}</td>
+                {% if (filters.rootcause_filter) %}
+                {% else %}
+                <td>{%= data[i][__("rootcause")] %}</td>
+                {% endif %}
+                <td>{%= data[i][__("actions")] %}</td>
+                {% if (filters.status_filter) %}
+                {% else %} 
+                <td>{%= data[i][__("complaint_status")] %}</td>
+                {% endif %}
+<!--                <td style="text-align: right;">{%= data[i][__("Rate")] %}</td> -->
+            </tr>
+        {% } %}
+    </tbody>
+
+</table>
+
+{% if filters.language_filter == "English" %}
+<p class="text-right text-muted">Created: {%= dateutil.str_to_user(dateutil.get_datetime_as_string()) %}</p>
+{% endif %}
+
+{% if filters.language_filter == "German" %}
+<p class="text-right text-muted">Erstellt: {%= dateutil.str_to_user(dateutil.get_datetime_as_string()) %}</p>
+{% endif %}
